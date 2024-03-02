@@ -22,6 +22,11 @@ const jobSchema ={
         type:Number,
         required:true,
         default:0
+    },
+    active:{
+        type:Boolean,
+        required:true,
+        default:true
     }
 };
 const jobModel= mongoose.model("jobs",jobSchema);
