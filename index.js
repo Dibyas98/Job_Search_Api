@@ -1,6 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose")
 const dotenv = require('dotenv')
+const cors = require('cors')
 
 dotenv.config();
 const jobRouter = require('./route/job')
@@ -16,6 +17,7 @@ mongoose.connect(`mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASS
 
 
 app.use(express.json())
+app.use(cors())
 app.use("/api/v1/job/",jobRouter)
 
 
